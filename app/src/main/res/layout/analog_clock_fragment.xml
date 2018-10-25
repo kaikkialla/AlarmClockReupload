@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorClockBg"
+    tools:context=".AnalogClockFragment">
+
+    <RelativeLayout
+        android:layout_width="192dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2">
+
+        <com.banana.y17_2.clock.AnalogClockView
+            android:id="@+id/analogClockView1"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:Tiget_timeZone="GMT+3"/>
+
+        <TextView
+            android:id="@+id/textViewFst"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="192dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2">
+
+        <com.banana.y17_2.clock.AnalogClockView
+            android:id="@+id/analogClockView2"
+            android:layout_width="192dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:Tiget_timeZone="GMT+9"/>
+
+        <TextView
+            android:id="@+id/textViewSec"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="192dp" />
+
+
+</android.support.constraint.ConstraintLayout>

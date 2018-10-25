@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Banana Clock</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Alarm_Clock_Fragment_Title_Alarm">Alarm</string>
+    <string name="Navigation_View_SleepLab">Sleep Lab</string>
+    <string name="Navigation_View_Alarm">Alarm</string>
+    <string name="Navigation_View_Settings">Settings</string>
+</resources>

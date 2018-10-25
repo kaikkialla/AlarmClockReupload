@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.rambler.libs.swipe_layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorClockBg"
+    app:left_swipe_enabled="false">
+
+
+
+    <RelativeLayout
+        android:id="@+id/MainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/Alarm_Clock_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HH:MM"
+            android:textSize="28dp"
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/Alarm_Clock_Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mo Tu Wd"
+            android:layout_below="@id/Alarm_Clock_Time"
+            android:textColor="@android:color/darker_gray"/>
+
+
+
+        <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/Alarm_Clock_Status_Checkbox"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="false"
+            android:drawableRight="@animator/checkbox_selector"
+            android:focusable="false"
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+
+    <!--RIGHT-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:gravity="right"
+        app:bring_to_clamp="150dp"
+        app:clamp="self"
+        app:sticky="100dp">
+    </LinearLayout>
+
+
+    <!--LEFT-->
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        app:gravity="left"
+        app:bring_to_clamp="100dp"
+        app:clamp="self"
+        app:sticky="none">
+
+        ...
+    </FrameLayout>
+
+
+
+</ru.rambler.libs.swipe_layout.SwipeLayout>
+
+
+

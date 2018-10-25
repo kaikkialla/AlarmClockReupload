@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AlarmClockFragment"
+    android:background="@color/colorClockBg">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Title_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/Alarm_Text_View"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/Alarm_Clock_Fragment_Title_Alarm"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/Add_Alarm_Button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_add_black_24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            />
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorClockBg"
+        app:itemIconTint="@android:color/darker_gray"
+        app:itemTextColor="@android:color/darker_gray"
+        app:menu="@menu/menu" />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Title_Layout"
+        android:padding="32dp">
+
+
+            <TextView
+                android:id="@+id/Alarm_Clock_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7:30"
+                android:textSize="28dp"
+                android:textColor="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/Alarm_Clock_Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Alarm_Clock_Time"
+            android:text="Mo Tu Wd"
+            android:textColor="@android:color/darker_gray"/>
+
+
+
+            <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/Alarm_Clock_Status_Checkbox"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:button="@null"
+                android:checked="false"
+                android:clickable="false"
+                android:drawableRight="@animator/checkbox_selector"
+                android:focusable="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout> -->
