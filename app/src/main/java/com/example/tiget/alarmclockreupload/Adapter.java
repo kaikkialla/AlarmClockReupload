@@ -51,11 +51,10 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder>{
     /**
      * Заполняет внутренний массив будильников массивом из параметров.
      */
-    public void swap(List<Alarm> alarm) {
-        if (alarm != null) {
+    public void swap(List<Alarm> alarms) {
+        if (alarms != null) {
             mAlarms.clear();
-            mAlarms.addAll(alarm);
-
+            mAlarms.addAll(alarms);
             notifyDataSetChanged();
         }
     }

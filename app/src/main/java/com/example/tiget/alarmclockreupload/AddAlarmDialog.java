@@ -18,7 +18,9 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class AddAlarmDialog extends DialogFragment {
@@ -36,6 +38,9 @@ public class AddAlarmDialog extends DialogFragment {
     public static int AlarmMinute;
     Context context;
 
+
+    Database mDatabase;
+    private List<Alarm> mAlarms = new ArrayList<>();
 
 
 
@@ -60,10 +65,11 @@ public class AddAlarmDialog extends DialogFragment {
         mTimePicker = view.findViewById(R.id.timePicker);
 
         final Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
 
         mTimePicker.setIs24HourView(true);
+
+
+        mDatabase = new Database(context);
 
         // настраиваем диалог
         builder.setTitle("Добавление будильника");
@@ -73,8 +79,8 @@ public class AddAlarmDialog extends DialogFragment {
                 AlarmTitle = mTextInputLayout.getEditText().getText().toString();
                 AlarmHour = mTimePicker.getHour();
                 AlarmMinute = mTimePicker.getMinute();
-                Log.e("time", AlarmTitle + "  " + AlarmHour + ":" + AlarmMinute);
-                Toast.makeText(context, AlarmTitle +  AlarmHour + AlarmMinute, Toast.LENGTH_SHORT).show();
+                mDatabase.addAlarm(new Alarm(1,  AlarmTitle, AlarmHour, AlarmMinute));
+
             }
         });
         builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {

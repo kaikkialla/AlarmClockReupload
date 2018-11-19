@@ -1,6 +1,7 @@
 package com.example.tiget.alarmclockreupload;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,6 +23,7 @@ public class AlarmClockFragment extends Fragment {
     ImageView AddAlarmButton;
     Adapter adapter;
     List<Alarm> alarms;
+    Database mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +32,13 @@ public class AlarmClockFragment extends Fragment {
         View view = inflater.inflate(R.layout.alarm_clock_fragment_layout, container, false);
         bottomNavigationView = view.findViewById(R.id.bottom_navigation_view);
         AddAlarmButton = view.findViewById(R.id.Add_Alarm_Button);
+
+
+        mDatabase = new Database(context);
+
+        mDatabase = new Database(getContext());
+        mDatabase.load();
+
 
 
         //Настраиваем Recycler View
@@ -67,6 +76,30 @@ public class AlarmClockFragment extends Fragment {
             }
         });
 
+
+
+
+
+        //Отрисовываем кнопки, появляющиеся при свайпе
+        SwipeHelper swipeHelper = new SwipeHelper(context, recyclerView) {
+            @Override
+            public void instantiateUnderlayButton(RecyclerView.ViewHolder viewHolder, List<SwipeHelper.UnderlayButton> underlayButtons) {
+
+                //Рисуем определенную кнопку
+                underlayButtons.add(new SwipeHelper.UnderlayButton(
+                        "Delete",
+                        0,
+                        Color.parseColor("#FF3C30"),//Задний фон кнопки
+                        new SwipeHelper.UnderlayButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                //Обрабатываем нажатие
+                            }
+                        }
+                ));
+            }
+        };
+
         return view;
     }
 
@@ -74,12 +107,12 @@ public class AlarmClockFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        Database.setChangeListener(new Database.ChangeListener() {
+        mDatabase.setChangeListener(new Database.ChangeListener() {
             @Override
             public void onChange(List<Alarm> alarms) {
                 adapter.swap(alarms);
             }
         });
-        adapter.swap(Database.getAlarms());
+        adapter.swap(mDatabase.getAlarms());
     }
 }
