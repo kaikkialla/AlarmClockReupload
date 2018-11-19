@@ -56,6 +56,7 @@ public class AlarmClockFragment extends Fragment {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.action_sleeplab:
+                                mDatabase.clear();
                                 break;
                             case R.id.action_alarm:
 
