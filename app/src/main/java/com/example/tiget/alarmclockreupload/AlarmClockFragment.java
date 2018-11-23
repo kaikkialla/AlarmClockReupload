@@ -79,8 +79,7 @@ public class AlarmClockFragment extends Fragment {
 
 
 
-
-
+/*
         //Отрисовываем кнопки, появляющиеся при свайпе
         SwipeHelper swipeHelper = new SwipeHelper(context, recyclerView) {
             @Override
@@ -100,6 +99,7 @@ public class AlarmClockFragment extends Fragment {
                 ));
             }
         };
+        */
 
         return view;
     }
