@@ -107,7 +107,6 @@ public class AlarmClockFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         mDatabase.setChangeListener(new Database.ChangeListener() {
             @Override
             public void onChange(List<Alarm> alarms) {

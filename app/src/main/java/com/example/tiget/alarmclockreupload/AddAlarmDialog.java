@@ -44,7 +44,6 @@ public class AddAlarmDialog extends DialogFragment {
 
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -77,9 +76,11 @@ public class AddAlarmDialog extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 AlarmTitle = mTextInputLayout.getEditText().getText().toString();
-                AlarmHour = mTimePicker.getHour();
-                AlarmMinute = mTimePicker.getMinute();
-                mDatabase.addAlarm(new Alarm(1,  AlarmTitle, AlarmHour, AlarmMinute));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    AlarmHour = mTimePicker.getHour();
+                    AlarmMinute = mTimePicker.getMinute();
+                }
+                mDatabase.addAlarm(new Alarm(1,AlarmTitle, AlarmHour, AlarmMinute));
 
             }
         });
