@@ -38,4 +38,5 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.Frame_Layout, new AlarmClockFragment(), null).commit();
         }
     }
+
 }
